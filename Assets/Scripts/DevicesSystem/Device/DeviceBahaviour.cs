@@ -11,7 +11,7 @@ namespace DevicesSystem.Device {
 
 		public IDeviceBahaviourModel Model => _model;
 
-		protected DeviceBahaviour(Device device, IDeviceBahaviourModel model, Type behaviorType){
+		protected DeviceBahaviour(Device device, IDeviceBahaviourModel model){
 			_device = device;
 			_model = model;
 		}

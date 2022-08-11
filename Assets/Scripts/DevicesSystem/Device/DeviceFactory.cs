@@ -8,10 +8,10 @@ namespace DevicesSystem.Device {
 			_deviceViewPrefab = deviceViewPrefab;
 		}
 
-		public Device Create(DeviceModel deviceModel, MonoBehaviour coroutiner){
+		public Device Create(DeviceModel deviceModel){
 			DeviceView deviceViewInstance = Object.Instantiate(_deviceViewPrefab);
 
-			Device newDevice = new Device(deviceModel, deviceViewInstance, coroutiner);
+			Device newDevice = new Device(deviceModel, deviceViewInstance);
 
 			return newDevice;
 		}

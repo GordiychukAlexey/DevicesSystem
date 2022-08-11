@@ -4,7 +4,7 @@ namespace DevicesSystem.Device {
 	public class DiscreteDeviceBahaviour : DeviceBahaviour {
 		private DiscreteVectorStateChanger discreteVectorStateChanger;
 
-		public DiscreteDeviceBahaviour(Device device, DiscreteDeviceBahaviourModel model) : base(device, model, typeof(DiscreteDeviceBahaviour)){
+		public DiscreteDeviceBahaviour(Device device, DiscreteDeviceBahaviourModel model) : base(device, model){
 			discreteVectorStateChanger = new DiscreteVectorStateChanger();
 		}
 

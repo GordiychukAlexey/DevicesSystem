@@ -11,7 +11,7 @@ namespace DevicesSystem.Device {
 			set => _model.StateChangeSpeed = value;
 		}
 
-		public AnalogDeviceBahaviour(Device device, AnalogDeviceBahaviourModel model) : base(device, model, typeof(AnalogDeviceBahaviour)){
+		public AnalogDeviceBahaviour(Device device, AnalogDeviceBahaviourModel model) : base(device, model){
 			_model = model;
 
 			analogVectorStateChanger = new AnalogVectorStateChanger();

@@ -29,7 +29,6 @@ namespace Ui {
 		private readonly DevicePanelUiView _devicePanelUiView;
 		private readonly DevicesSystem.DevicesSystem _devicesSystem;
 
-
 		private readonly Dictionary<int, (ActionsQueue.CommandType, string)> _commandParametersByIndex =
 			_commandIndexByCommandType.ToDictionary(
 				pair => pair.Value,

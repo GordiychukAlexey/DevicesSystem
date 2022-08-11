@@ -28,13 +28,13 @@ namespace DevicesSystem.Device {
 
 		public IReadOnlyDictionary<Type, DeviceBahaviour> Behaviours => _behaviours;
 
-		public Device(DeviceModel model, DeviceView view, MonoBehaviour coroutiner){
+		public Device(DeviceModel model, DeviceView view){
 			_model = model;
 			_view = view;
 
 			TargetState = _model.State.Value;
 
-			_stateActionsQueue = new ActionsQueue(coroutiner);
+			_stateActionsQueue = new ActionsQueue(view);
 
 			AddDisposable(model.CurrentCommandType.Subscribe(type => _stateActionsQueue.CurrentCommandType = type));
 

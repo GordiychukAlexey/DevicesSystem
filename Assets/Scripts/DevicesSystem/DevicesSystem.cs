@@ -8,7 +8,6 @@ namespace DevicesSystem {
 	public class DevicesSystem : BaseDisposable {
 		private readonly DevicesSystemModel _model;
 		private readonly DeviceFactory _deviceFactory;
-		private readonly MonoBehaviour _coroutiner;
 
 		private ReactiveCollection<Device.Device> _devices = new ReactiveCollection<Device.Device>();
 
@@ -17,7 +16,6 @@ namespace DevicesSystem {
 		public DevicesSystem(DevicesSystemModel model, DeviceFactory deviceFactory, MonoBehaviour coroutiner){
 			_model = model;
 			_deviceFactory = deviceFactory;
-			_coroutiner = coroutiner;
 
 			foreach (DeviceModel deviceModel in _model.Devices){
 				AddDevice(deviceModel);
@@ -27,7 +25,7 @@ namespace DevicesSystem {
 		}
 
 		private void AddDevice(DeviceModel deviceModel){
-			var newDevice = AddDisposable(_deviceFactory.Create(deviceModel, _coroutiner));
+			var newDevice = AddDisposable(_deviceFactory.Create(deviceModel));
 			_devices.Add(newDevice);
 		}
 
